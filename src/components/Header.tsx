@@ -2,7 +2,7 @@ const style = "h-[40px] w-[40px] cursor-pointer bg-white rounded ml-4 p-[5px]"
 
 function Header() {
   return (
-    <div className='h-24 w-screen text-blue-500'>
+    <div className='h-24 w-screen text-blue-500 absolute z-[100]'>
       <div className='flex flex-row p-3'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ function Header() {
           xmlns="http://www.w3.org/2000/svg"
           className={style}
           fill="currentColor"
-          style={{color: "#0077b5"}}
+          style={{backgroundColor:"#0077b5", color: "#ffffff"}}
           viewBox="0 0 24 24"
           onClick={()=>{window.open('https://linkedin.com/in/jimmieburge','__blank')}}>
           <path

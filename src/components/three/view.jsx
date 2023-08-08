@@ -8,19 +8,19 @@ import Functions from './tween';
 const scene = new THREE.Scene();
 scene.background = new THREE.Color( 0x2A2B2A );
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
+// const raycaster = new THREE.Raycaster();
+// const mouse = new THREE.Vector2();
 const meshes = [];
 const animLoop = 75;
 
 const loader = new FontLoader();
-const animate = false;
+// const animate = false;
 let a = 0;
 const str = 'Jimmie';
 
-function bounce() {
+// function bounce() {
 
-}
+// }
 
 function View() {
   const renderer = useRef(new THREE.WebGLRenderer({ alpha: true }));
@@ -28,13 +28,13 @@ function View() {
   // const renderer = useRef(new CSS3DRenderer());
   const canvas = useRef();
   // const meshes = useRef({});
-  const controls = useRef({});
-  const [dev, setDev] = useState('');
-  const [frame, setFrame] = useState(0);
+  // const controls = useRef({});
+  // const [dev, setDev] = useState('');
+  // const [frame, setFrame] = useState(0);
 
-  const mouseMove = (e) => {
+  // const mouseMove = (e) => {
 
-  }
+  // }
 
 
   const animate = () => {
@@ -42,7 +42,7 @@ function View() {
 
     if (a % 100 === 0) {
       let p = camera.position;
-      setDev(`x: ${p.x}, y: ${p.y}, z: ${p.z}`);
+      // setDev(`x: ${p.x}, y: ${p.y}, z: ${p.z}`);
     }
 
     const yDiff = a % animLoop;
@@ -51,10 +51,10 @@ function View() {
     if (current?.position){
 
       // current.rotation.y = Math.PI * 8 / animLoop/2 * (animLoop / 2 * Functions.easeInOutQuint(2 / animLoop * (animLoop / 2 - Math.abs(yDiff - animLoop / 2))));
-      current.rotation.y = (Math.PI * 2 / animLoop) * Functions.easeInOutQuint(yDiff/animLoop) * animLoop;
+      current.rotation.x = (Math.PI * 2 / animLoop) * Functions.easeInOutCubic(yDiff/animLoop) * animLoop;
       // console.log(Functions.easeInOutQuint(yDiff/animLoop))
       if ((a + 1) % animLoop === 0) {
-        current.rotation.y = 0;
+        current.rotation.x = 0;
       }
     }
 
@@ -162,10 +162,14 @@ function View() {
   }, []);
 
   return (
-    <div className='relative'>
-      <div className='w-[100%] h-[450px] m-auto bg-primary' ref={canvas} onMouseMove={mouseMove}></div>
-      <div className = 'absolute top-[5%] left-[20%] text-4xl'>Hello,<br/>my name is</div>
-      {/* <div className=''>{dev}</div> */}
+    <div className='relative w-[100%] h-[100vh]'>
+      <div className='absolute w-[100%] top-[50%] translate-y-[-50%]'>
+        <div className='w-[100%] h-[450px] m-auto bg-primary' ref={canvas}></div>
+        <div className = 'absolute top-[5%] left-[20%] text-3xl'>Hello,<br/>my name is</div>
+
+        <div className='absolute bottom-[5%] left-[20%] text-3xl'> I am a <span className='text-accent text-5xl'>full-stack</span> web developer<br/>making sites for 3+ years.</div>
+        {/* <div className=''>{dev}</div> */}
+      </div>
     </div>
   );
 }
