@@ -24,7 +24,7 @@ function rotateMesh(mesh, angle) {
 function View() {
   const renderer = useRef(new THREE.WebGLRenderer());
   // const renderer = useRef(new CSS3DRenderer());
-  const canvas = useRef<HTMLDivElement>();
+  const canvas = useRef();
   // const meshes = useRef({});
   const controls = useRef({});
   const [dev, setDev] = useState('');
