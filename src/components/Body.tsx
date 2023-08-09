@@ -1,3 +1,4 @@
+//@ts-ignore
 import View from "./three/view";
 import Tech from "./Tech";
 function Body() {

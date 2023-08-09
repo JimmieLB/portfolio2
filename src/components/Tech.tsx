@@ -7,19 +7,21 @@ function Md({children}: {children:  string}) {
 
 function DivContainer({ name, children }: {name: string, children: string | JSX.Element | JSX.Element[]}) {
   return (
-    <div className='md:w-1/2 s:w-1/1 lg:w-1/4 flex flex-col justify-items-center bg-neutral p-2'>
-      <div className='w-1/1 mb-5'>
-        <div className='ml-auto mr-auto text-center text-2xl text-white p-2 bg-primary'>{name}</div>
+    <div className='md:w-1/2 s:w-1/1 lg:w-1/4 flex flex-col justify-items-center bg-neutral'>
+      <div className='w-1/1'>
+        <div className='ml-auto mr-auto text-center text-2xl text-white p-2 bg-accent'>{name}</div>
       </div>
-      {children}
+      <div className='w-[100%] h-[100%] p-5 bg-neutral flex flex-col justify-items-center'>
+        {children}
+      </div>
     </div>
   )
 }
 function Tech() {
   return (<>
-    <div className='lg:w-[60%] md:w-[70%] s:w-[80%] m-auto mt-10'>
-    <div className='text-3xl m-1/1 text-right'>Here are some of the technologies that I've used:</div>
-    <div className='w-1/1 flex flex-row mt-5'>
+    <div className='lg:w-[60%] md:w-[70%] s:w-[80%] m-auto'>
+    <div className='text-3xl m-1/1 text-left'>Here are some of the technologies that I've used:</div>
+    <div className='w-1/1 flex flex-row mt-4'>
       <DivContainer name={'Frontend'}>
         <Md>![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)</Md>
         <Md>![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)</Md>
@@ -29,7 +31,7 @@ function Tech() {
         <Md>![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)</Md>
         <Md>![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)</Md>
       </DivContainer>
-      <DivContainer name={'Backend'}>
+      <DivContainer name={'Api'}>
         <Md>![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)</Md>
         <Md>![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)</Md>
         <Md>![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)</Md>

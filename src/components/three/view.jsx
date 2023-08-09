@@ -16,7 +16,7 @@ const animLoop = 75;
 const loader = new FontLoader();
 // const animate = false;
 let a = 0;
-const str = 'Jimmie';
+const str = 'JimmiE';
 
 // function bounce() {
 
@@ -91,21 +91,26 @@ function View() {
 
       const path = '/public/fonts/font4.json'
       let width = 0;
-      const space = 20;
+      const space = 10;
       const light = new THREE.AmbientLight(0xffffff, 2, 1);
+
+      const cylinderGeometry = new THREE.CylinderGeometry( 400, 400, 10, 32 );
+      const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+      const m = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+      // scene.add(m);
 
       for (let i = 0; i < str.length; i++) {
         loader.load(path, function (font) {
           const geometry = new TextGeometry(str[i], {
             font: font,
             size: 100,
-            height: 15,
+            height: 25,
             curveSegments: 1,
             bevelEnabled: false,
-            bevelThickness: 10,
-            bevelSize: 1,
+            bevelThickness: 5,
+            bevelSize: 15,
             bevelOffset: 0,
-            bevelSegments: 5
+            bevelSegments: 10
           });
           geometry.center();
           const mat = new THREE.MeshNormalMaterial();
@@ -148,8 +153,12 @@ function View() {
 
           camera.lookAt(new THREE.Vector3(width / 2, y, z));
           // light.lookAt(new THREE.Vector3(width/2, y, z));
+          m.position.x = width/2;
+          m.position.y = y/2;
         });
       }
+      m.position.z = -150;
+      m.rotation.x = Math.PI/2;
 
       light.position.set(camera.position.x, camera.position.y, camera.position.z)
       scene.add(light);
@@ -164,10 +173,10 @@ function View() {
   return (
     <div className='relative w-[100%] h-[100vh]'>
       <div className='absolute w-[100%] top-[50%] translate-y-[-50%]'>
-        <div className='w-[100%] h-[450px] m-auto bg-primary' ref={canvas}></div>
-        <div className = 'absolute top-[5%] left-[20%] text-3xl'>Hello,<br/>my name is</div>
+        <div className='w-[100%] h-[500px] m-auto bg-primary' ref={canvas}></div>
+        <div className = 'absolute top-[5%] left-[25%] text-3xl'>Hi,<br/>my name is</div>
 
-        <div className='absolute bottom-[5%] left-[20%] text-3xl'> I am a <span className='text-accent text-5xl'>full-stack</span> web developer<br/>making sites for 3+ years.</div>
+        <div className='absolute bottom-[5%] left-[25%] text-3xl'><span className='text-accent text-5xl'>full-stack</span> web developer<br/>making stuff since 2018.</div>
         {/* <div className=''>{dev}</div> */}
       </div>
     </div>
