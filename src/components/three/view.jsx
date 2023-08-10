@@ -176,7 +176,7 @@ function View() {
         <div className='w-[100%] h-[500px] m-auto bg-primary' ref={canvas}></div>
         <div className = 'absolute top-[5%] left-[25%] text-3xl'>Hi,<br/>my name is</div>
 
-        <div className='absolute bottom-[5%] left-[25%] text-3xl'><span className='text-accent text-5xl'>full-stack</span> web developer<br/>making stuff since 2018.</div>
+        <div className='absolute bottom-[5%] left-[25%] text-3xl'><span className='text-accent text-5xl'>full-stack</span> web developer<br/>making stuff since 2017.</div>
         {/* <div className=''>{dev}</div> */}
       </div>
     </div>

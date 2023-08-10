@@ -1,11 +1,13 @@
 //@ts-ignore
 import View from "./three/view";
 import Tech from "./Tech";
+import About from "./About";
 function Body() {
   return (
     <>
       <View/>
       <Tech/>
+      <About/>
       <div className='w-[100%]'>
       </div>
       {/* <div className='m-auto w-[50%] h-[20px] mt-2 bg-primary'></div>
