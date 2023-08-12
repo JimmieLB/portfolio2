@@ -25,6 +25,7 @@ const Functions = {
     return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
   },
   easeInOutQuint: function (x: number): number {
+    // return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
     return x < 0.5 ? 16 * x * x * x * x * x : 1 - Math.pow(-2 * x + 2, 5) / 2;
   },
   easeInOutCubic: function (x: number): number {
