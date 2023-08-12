@@ -1,4 +1,4 @@
-//@ts-ignore
+
 import View from "./three/view";
 import Tech from "./Tech";
 import About from "./About";
