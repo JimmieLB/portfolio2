@@ -1,4 +1,4 @@
-
+// @ts-expect-error
 import View from "./three/view";
 import Tech from "./Tech";
 import About from "./About";
